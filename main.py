@@ -1,11 +1,11 @@
-from Game_Info import start_game, end_game
-from function_def import ChopsticksGame
+from functions import start_game, end_game, print_moves
+from hand_counting_function import ChopsticksGame
 
 game = ChopsticksGame()
 start_game()
 
 while True:
-    choice = input("Which hand would you like to attack WITH (user) (l/r): ").lower()
+    choice = input("Which hand would you like to attack with (user) (l/r): ").lower()
     attack = input("Which hand would you like to attack (opponent) (l/r): ").lower()
 
     # First, get which hand the player is attacking with
@@ -32,12 +32,6 @@ while True:
         print("Please Select a Valid Hand.")
         continue
 
-    game.print_hands()
-    print("")
-    print("---------------------")
-    game.computer_move()
-    print("")
-    game.print_hands()
-    print("")
+    print_moves()
 
 end_game()
